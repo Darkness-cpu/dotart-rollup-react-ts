@@ -12,10 +12,9 @@
     "bundler",
     "javascript"
   ],
-  "author": "Your Name",
+  "author": "Darkness-cpu",
   "license": "MIT",
   "dependencies": {
-    "react-toastify": "latest",
     "react": "^18",
     "react-dom": "^18"
   },
@@ -23,19 +22,19 @@
     "@babel/core": "latest",
     "@babel/preset-env": "latest",
     "@babel/preset-react": "latest",
-    "@babel/preset-typescript": "^7.26.0",
+    "@babel/preset-typescript": "latest",
     "@rollup/plugin-babel": "latest",
     "@rollup/plugin-commonjs": "latest",
-    "@rollup/plugin-image": "^3.0.3",
-    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-image": "latest",
+    "@rollup/plugin-json": "latest",
     "@rollup/plugin-node-resolve": "latest",
     "@rollup/plugin-replace": "latest",
-    "@rollup/plugin-typescript": "^12.1.2",
+    "@rollup/plugin-typescript": "latest",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "rollup": "latest",
-    "serve": "^14.2.4",
-    "tslib": "^2.8.1",
-    "typescript": "^5.7.3"
+    "serve": "latest",
+    "tslib": "latest",
+    "typescript": "latest"
   }
 }
