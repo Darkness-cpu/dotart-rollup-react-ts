@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 const App: React.FC = () => {
-  const [result, setResult] = useState<string>(''); // กำหนดชนิดข้อมูลเป็น string
-  const [data, setData] = useState<{ link: string | null }>({ link: null }); // ระบุชนิดข้อมูลที่ชัดเจน
+  const [result, setResult] = useState<string>('');
+  const [data, setData] = useState<{ link: string | null }>({ link: null });
 
   const handleSearch = async () => {
     const urlInput = (document.getElementById('youtubeUrl') as HTMLInputElement).value;
