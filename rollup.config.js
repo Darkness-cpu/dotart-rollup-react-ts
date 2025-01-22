@@ -12,7 +12,8 @@ export default {
   output: [
     {
       file: "dist/bundler.js",
-      format: "umd"
+      format: "umd",
+      external: ['react','react-dom']
     },
   ],
   plugins: [
