@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './style.css'; // นำเข้าไฟล์ CSS
 
 const App: React.FC = () => {
   const [youtubeUrl, setYoutubeUrl] = useState('');
