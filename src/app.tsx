@@ -40,7 +40,7 @@ const App: React.FC = () => {
       <p id="result">{result}</p>
       {data.link && (
         <a href={data.link} target="_blank" rel="noopener noreferrer">
-          Download
+          Download x HeeHerCute
         </a>
       )}
     </div>
