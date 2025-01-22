@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const App: React.FC = () => {
-  const [result, setResult] = useState<string>(''); // กำหนดชนิดเป็น string
+  const [result, setResult] = useState<string>(''); // กำหนดชนิดข้อมูลเป็น string
   const [data, setData] = useState<{ link: string | null }>({ link: null }); // ระบุชนิดข้อมูลที่ชัดเจน
 
   const handleSearch = async () => {
@@ -22,7 +22,12 @@ const App: React.FC = () => {
         setResult('Failed to get the MP3 link.');
       }
     } catch (error) {
-      setResult(`Error: ${error.message}`);
+      // ตรวจสอบและแปลงชนิดของ error
+      if (error instanceof Error) {
+        setResult(`Error: ${error.message}`);
+      } else {
+        setResult('An unknown error occurred.');
+      }
     }
   };
 
@@ -41,5 +46,4 @@ const App: React.FC = () => {
     </div>
   );
 };
-
 export default App;
