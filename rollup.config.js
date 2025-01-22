@@ -11,7 +11,7 @@ export default {
   input: "src/main.tsx",
   output: [
     {
-      file: "dist/script.js",
+      file: "dist/bundler.js",
       format: "umd"
     },
   ],
