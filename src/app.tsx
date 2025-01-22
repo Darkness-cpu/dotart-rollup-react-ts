@@ -5,7 +5,9 @@ const App: React.FC = () => {
     console.log("App mounted");
   }, []);
 
-  return <div>My App</div>;
+  return (
+    <div>My App</div>
+  )
 };
 
 export default App;
