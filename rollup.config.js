@@ -1,7 +1,7 @@
 import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
-import resolve from '@rollup/plugin-node-resolve';
+import nodeResolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import image from '@rollup/plugin-image';
 
@@ -22,7 +22,7 @@ export default {
     }),
     json({ compact: true, namedExports: true }),
     image(),
-    resolve({
+    nodeResolve({
      browser: true,
      extensions: ['.ts', '.tsx'] }),
     commonjs(),
