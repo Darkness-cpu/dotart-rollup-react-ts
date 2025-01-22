@@ -3,7 +3,6 @@ import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
-import image from '@rollup/plugin-image';
 
 
 
@@ -24,6 +23,7 @@ export default {
     babel({
       babelHelpers: 'bundled',
       presets: ['@babel/preset-env','@babel/preset-react','@babel/preset-typescript'],
+      exclude: 'node_modules',
       extensions: ['.ts','.tsx'],
     }),
     commonjs(),
