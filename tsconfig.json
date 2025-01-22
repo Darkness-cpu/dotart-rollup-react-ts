@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "importHelpers": true,
-    "target": "ES6",
+    "target": "ES2016",
     "lib": ["ESNEXT","DOM","DOM.Iterable"],
     "jsx": "react",
     "experimentalDecorators": true,  
