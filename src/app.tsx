@@ -1,13 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 const App: React.FC = () => {
-  useEffect(() => {
-    console.log("App mounted");
-  }, []);
-
   return (
-    <div>My App</div>
-  )
+    <div>
+      <h1>Welcome to My Application</h1>
+    </div>
+  );
 };
 
 export default App;
