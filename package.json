@@ -1,0 +1,43 @@
+{
+  "name": "react-rollup-app",
+  "version": "1.0.0",
+  "description": "A basic React app bundled with Rollup",
+  "type": "module",
+  "scripts": {
+    "build": "rollup --config ./config/rollup.prod.config.js",
+    "dev": "rollup -c -w",
+    "start": "rollup -c && serve ./dist"
+  },
+  "keywords": [
+    "react",
+    "rollup",
+    "bundler",
+    "javascript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "react-toastify": "latest",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest",
+    "@babel/preset-react": "latest",
+    "@babel/preset-typescript": "^7.26.0",
+    "@rollup/plugin-babel": "latest",
+    "@rollup/plugin-commonjs": "latest",
+    "@rollup/plugin-image": "^3.0.3",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "latest",
+    "@rollup/plugin-replace": "latest",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "rollup": "latest",
+    "serve": "^14.2.4",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.3"
+  }
+}
