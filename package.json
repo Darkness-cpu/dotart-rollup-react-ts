@@ -26,8 +26,6 @@
     "@babel/preset-typescript": "latest",
     "@rollup/plugin-babel": "latest",
     "@rollup/plugin-commonjs": "latest",
-    "@rollup/plugin-image": "latest",
-    "@rollup/plugin-json": "latest",
     "@rollup/plugin-node-resolve": "latest",
     "@rollup/plugin-replace": "latest",
     "@rollup/plugin-typescript": "latest",
