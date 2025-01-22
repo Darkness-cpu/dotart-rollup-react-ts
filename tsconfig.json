@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
+    "importHelpers": true,
     "target": "ES6",
     "lib": ["ESNEXT","DOM","DOM.Iterable"],
     "jsx": "react",
     "experimentalDecorators": true,  
     "moduleDetection": "auto",
-    "module": "esnext",               
-    //"rootDir": "./src",
+    "module": "ESNEXT",
     "moduleResolution": "node",
     "baseUrl": "./",              
     "typeRoots": ["./node_modules/@types"],
@@ -16,7 +16,7 @@
     "removeComments": true,      
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-   "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
