@@ -1,59 +1,43 @@
 import React, { useState } from 'react';
 
 const App: React.FC = () => {
-  const [youtubeUrl, setYoutubeUrl] = useState('');
-  const [result, setResult] = useState('');
+  const [result, setResult] = useState<string>(''); // กำหนดชนิดเป็น string
+  const [data, setData] = useState<{ link: string | null }>({ link: null }); // ระบุชนิดข้อมูลที่ชัดเจน
 
-  const downloadMp3 = async () => {
-    if (!youtubeUrl) {
+  const handleSearch = async () => {
+    const urlInput = (document.getElementById('youtubeUrl') as HTMLInputElement).value;
+    if (!urlInput) {
       setResult('Please enter a URL.');
       return;
     }
 
     setResult('Processing...');
     try {
-      const response = await fetch(`/dl?url=${encodeURIComponent(youtubeUrl)}`);
-      const data = await response.json();
-      if (data.link) {
-        setResult(
-          <a href={data.link} target="_blank" rel="noopener noreferrer">
-            Download
-          </a>
-        );
+      const response = await fetch(`/dl?url=${encodeURIComponent(urlInput)}`);
+      const responseData = await response.json();
+
+      if (responseData.link) {
+        setData({ link: responseData.link });
       } else {
         setResult('Failed to get the MP3 link.');
       }
-    } catch (error: any) {
+    } catch (error) {
       setResult(`Error: ${error.message}`);
     }
   };
 
   return (
-    <div className="container">
-      <h1 className="heading">YouTube MP3 Downloader</h1>
+    <div>
+      <h1>YouTube MP3 Downloader</h1>
       <p>Enter a YouTube URL to download the MP3</p>
-      <input
-        type="text"
-        value={youtubeUrl}
-        onChange={(e) => setYoutubeUrl(e.target.value)}
-        placeholder="Enter YouTube URL"
-        className="input"
-      />
-      <button onClick={downloadMp3} className="button">
-        Search
-      </button>
-      <p>{result}</p>
-      <footer className="footer">
-        Dev by{' '}
-        <a
-          href="https://github.com/mistakes333"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="link"
-        >
-          mistakes333
+      <input type="text" id="youtubeUrl" placeholder="Enter YouTube URL" />
+      <button onClick={handleSearch}>Search</button>
+      <p id="result">{result}</p>
+      {data.link && (
+        <a href={data.link} target="_blank" rel="noopener noreferrer">
+          Download
         </a>
-      </footer>
+      )}
     </div>
   );
 };
