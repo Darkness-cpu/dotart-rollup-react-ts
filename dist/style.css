@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -5,55 +6,80 @@ body {
   padding: 0;
   background-color: #f9f9f9;
   color: #333;
+  line-height: 1.6;
 }
 
-.container {
-  min-height: 100vh;
-}
-
-.heading {
+h1 {
   margin-top: 20px;
-  font-size: 24px;
-  color: #007bff;
+  font-size: 28px;
+  color: #007BFF;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.input {
-  padding: 10px;
+p {
   font-size: 16px;
-  margin: 5px;
+  margin: 10px 0;
+}
+
+/* Input and Button Styles */
+input,
+button {
+  padding: 12px;
+  font-size: 16px;
+  margin: 10px auto;
   width: 90%;
   max-width: 400px;
   box-sizing: border-box;
 }
 
-.button {
-  padding: 10px;
-  font-size: 16px;
-  margin: 5px;
-  width: 90%;
-  max-width: 400px;
-  background-color: #007bff;
+input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007BFF;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.button:hover {
+button:hover {
   background-color: #0056b3;
 }
 
-.footer {
+/* Result and Link Styles */
+#result {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+#result a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#result a:hover {
+  text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
   margin-top: 30px;
   font-size: 14px;
   color: gray;
 }
 
-.link {
-  color: #007bff;
+footer a {
+  color: #007BFF;
   text-decoration: none;
 }
 
-.link:hover {
+footer a:hover {
   text-decoration: underline;
 }
