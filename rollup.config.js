@@ -21,7 +21,7 @@ export default {
     }),
     nodeResolve({ browser: true }),
     babel({
-      babelHelpers: 'bundled',
+      
       presets: ['@babel/preset-env','@babel/preset-react','@babel/preset-typescript'],
       exclude: 'node_modules',
       extensions: ['.ts','.tsx'],
