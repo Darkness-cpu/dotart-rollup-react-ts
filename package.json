@@ -1,7 +1,7 @@
 {
   "name": "react-rollup-ts",
   "version": "1.0.0",
-  "type": "module",
+  "module": "./dist/script.js",
   "description": "A basic React app bundled with Rollup",
   "scripts": {
     "dev": "rollup -c -w",
