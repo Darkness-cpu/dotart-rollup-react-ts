@@ -11,9 +11,7 @@ export default {
       format: "umd",
       globals: { // For UMD builds, specify globals for external dependencies
       react: 'React',
-      'react-dom': 'ReactDOM'
-      }
-      
+      'react-dom': 'ReactDOM' }      
     },
   ],
   plugins: [
