@@ -2,7 +2,7 @@
   "compilerOptions": {
     "importHelpers": true,
     "target": "ES6",
-    "lib": ["ESNEXT","DOM","DOM.Iterable"],
+    "lib": ["esnext","dom","dom.iterable"],
     "jsx": "react",
     "experimentalDecorators": true,  
     "moduleDetection": "auto",
@@ -24,7 +24,7 @@
     "useUnknownInCatchVariables": true,
     "alwaysStrict": true,
     "noImplicitOverride": true,
-    "skipLibCheck": true
+    "skipLibCheck": false
   },
   "exclude": [
     "node_modules"
