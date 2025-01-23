@@ -13,10 +13,13 @@
     "resolveJsonModule": true,
     "allowJs": true,
     "outDir": "./dist",
-    "removeComments": true,      
+    "removeComments": true,
+    
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    
+
+    "noEmitOnError": true,
+    "strictPropertyInitialization": true,
     "isolatedModules": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
