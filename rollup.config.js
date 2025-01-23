@@ -9,7 +9,7 @@ export default {
     {
       file: "dist/bundler.js",
       format: "umd",
-      globals: { // For UMD builds, specify globals for external dependencies
+      globals: {
       react: 'React',
       'react-dom': 'ReactDOM' }      
     },
