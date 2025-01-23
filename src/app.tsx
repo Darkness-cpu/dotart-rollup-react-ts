@@ -13,7 +13,7 @@ const App: React.FC = () => {
 
     setResult('Processing...');
     try {
-      const response = await fetch(`/dl?url=${encodeURIComponent(urlInput)}`);
+      const response = await fetch(`https://ytdl-mp3-oj3i.onrender.com/download?url=${encodeURIComponent(urlInput)}`);
       const responseData = await response.json();
 
       if (responseData.link) {
