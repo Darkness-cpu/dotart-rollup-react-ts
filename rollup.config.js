@@ -14,7 +14,7 @@ export default {
       'react-dom': 'ReactDOM' }      
     },
   ],
-  external: ['react','react-dom','axios'],
+  external: ['react','react-dom'],
   plugins: [
     replace({preventAssignment:true,'process.env.NODE_ENV':JSON.stringify('production')}),
     nodeResolve({browser:true}),
