@@ -6,12 +6,11 @@
     "target": "es6",
     "lib": ["esnext","dom","dom.iterable"],
     "jsx": "react",
-
-    "noEmit": true,
+    
     "experimentalDecorators": true,  
     "emitDecoratorMetadata": true,
     
-    "moduleDetection": "legacy",
+    "moduleDetection": "auto",
     "module": "esnext",
     "moduleResolution": "bundler",
     "baseUrl": "./src",              
@@ -23,7 +22,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
 
-    "allowImportingTsExtensions": true,
+    
     "noEmitOnError": true,
     "strictPropertyInitialization": true,
     "isolatedModules": true,
@@ -33,6 +32,7 @@
     "noImplicitReturns": true,
     "verbatimModuleSyntax": true,
     "useDefineForClassFields": true,
+
     
     "forceConsistentCasingInFileNames": true,
     "strict": true,
