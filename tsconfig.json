@@ -7,7 +7,7 @@
     "experimentalDecorators": true,  
     "moduleDetection": "auto",
     "module": "esnext",
-    "moduleResolution": "node16",
+    "moduleResolution": "bundler",
     "baseUrl": "./src",              
     "typeRoots": ["./node_modules/@types"],
     "resolveJsonModule": true,
