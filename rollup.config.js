@@ -14,11 +14,11 @@ export default {
       'react-dom': 'ReactDOM' }      
     },
   ],
-  external: ['react','react-dom'],
+  external: ['react','react-dom','axios'],
   plugins: [
-    replace({preventAssignment: true,'process.env.NODE_ENV': JSON.stringify('production')}),
-    nodeResolve({browser: true}),
-    babel({babelHelpers: 'bundled',presets: ['@babel/preset-env','@babel/preset-react','@babel/preset-typescript'],exclude: 'node_modules/**',extensions: ['.ts','.tsx']}),
+    replace({preventAssignment:true,'process.env.NODE_ENV':JSON.stringify('production')}),
+    nodeResolve({browser:true}),
+    babel({babelHelpers:'bundled',presets:['@babel/preset-env','@babel/preset-react','@babel/preset-typescript'],exclude:'node_modules/**',extensions: ['.ts','.tsx']}),
     commonjs(),
-    typescript({tsconfig: './tsconfig.json' })
+    typescript({tsconfig:'./tsconfig.json' })
   ]};
