@@ -14,6 +14,7 @@ export default {
       'react-dom': 'ReactDOM' }      
     },
   ],
+  external: ['react', 'react-dom']
   plugins: [
     replace({
       preventAssignment: true,
