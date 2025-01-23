@@ -11,10 +11,10 @@ export default {
       format: "umd",
       globals: {
       react: 'React',
-      'react-dom': 'ReactDOM' }      
-    },
+      'react-dom': 'ReactDOM'
+      }      
+    }
   ],
-  external: ['react','react-dom'],
   plugins: [
     replace({
       preventAssignment:true,
@@ -25,7 +25,11 @@ export default {
     }),
     babel({
       babelHelpers:'bundled',
-      presets:['@babel/preset-env','@babel/preset-react','@babel/preset-typescript'],
+      presets:[
+        '@babel/preset-env',
+        '@babel/preset-react',
+        '@babel/preset-typescript'
+      ],
       exclude:'node_modules/**',
       extensions: ['.ts','.tsx']
     }),
