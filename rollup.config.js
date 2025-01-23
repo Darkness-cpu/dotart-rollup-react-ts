@@ -32,7 +32,7 @@ export default {
         '@babel/preset-typescript'
       ],
       plugins:[
-        "babel-plugin-react-compiler":{target:'18'},
+          ['babel-plugin-react-compiler', { target: '18' }],
       ],
       exclude:'node_modules/**',
       extensions: ['.ts','.tsx']
