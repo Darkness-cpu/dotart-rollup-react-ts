@@ -1,11 +1,16 @@
 {
   "compilerOptions": {
     "importHelpers": true,
+    "incremental": true,
+    "tsBuildInfoFile": "./.tsbuildinfo",
     "target": "es6",
     "lib": ["esnext","dom","dom.iterable"],
     "jsx": "react",
+    
     "experimentalDecorators": true,  
-    "moduleDetection": "auto",
+    "emitDecoratorMetadata": true,
+    
+    "moduleDetection": "focus",
     "module": "esnext",
     "moduleResolution": "bundler",
     "baseUrl": "./src",              
@@ -14,10 +19,10 @@
     "allowJs": true,
     "outDir": "./dist",
     "removeComments": true,
-    
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
 
+    "allowImportingTsExtensions": true,
     "noEmitOnError": true,
     "strictPropertyInitialization": true,
     "isolatedModules": true,
