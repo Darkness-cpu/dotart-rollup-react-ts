@@ -8,37 +8,20 @@ export default {
   output: [
     {
       file: "dist/bundler.js",
-      format: "umd",
-      globals: {
-      react: 'React',
-      'react-dom': 'ReactDOM'
-      }      
-    }
+      format: "umd"
+    },
   ],
-  external: ['react','react-dom'],
   plugins: [
     replace({
-      preventAssignment:true,
-      'process.env.NODE_ENV':JSON.stringify('production')
-    }),
-    nodeResolve({
-      browser:true
-    }),
+      preventAssignment: true,
+      'process.env.NODE_ENV': JSON.stringify('production') }),
+    nodeResolve({ browser: true }),
     babel({
-      babelHelpers:'bundled',
-      presets:[
-        '@babel/preset-env',
-        '@babel/preset-react',
-        '@babel/preset-typescript'
-      ],
-      plugins:[
-          ['babel-plugin-react-compiler', { target: '18' }],
-      ],
-      exclude:'node_modules/**',
-      extensions: ['.ts','.tsx']
-    }),
+      babelHelpers: 'bundled',
+      presets: ['@babel/preset-env','@babel/preset-react','@babel/preset-typescript'],
+      plugins:[ ['babel-plugin-react-compiler', { target: '18' }] ],
+      exclude: 'node_modules',
+      extensions: ['.ts','.tsx'] }),
     commonjs(),
-    typescript({
-      tsconfig:'./tsconfig.json'
-    })
+    typescript({ tsconfig: './tsconfig.json' })
   ]};
