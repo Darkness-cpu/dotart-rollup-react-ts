@@ -16,6 +16,7 @@
   "author": "Darkness-cpu",
   "license": "MIT",
   "dependencies": {
+    "axios": ""latest"
     "react": "^18",
     "react-dom": "^18"
   },
