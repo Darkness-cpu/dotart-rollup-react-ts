@@ -10,7 +10,7 @@
     "experimentalDecorators": true,  
     "emitDecoratorMetadata": true,
     
-    "moduleDetection": "focus",
+    "moduleDetection": "legacy",
     "module": "esnext",
     "moduleResolution": "bundler",
     "baseUrl": "./src",              
