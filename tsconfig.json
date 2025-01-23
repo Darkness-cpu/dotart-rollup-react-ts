@@ -16,6 +16,15 @@
     "removeComments": true,      
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    
+    "isolatedModules": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "verbatimModuleSyntax": true,
+    "useDefineForClassFields": true,
+    
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitAny": true,
