@@ -8,7 +8,11 @@ export default {
   output: [
     {
       file: "dist/bundler.js",
-      format: "umd"
+      format: "umd",
+      globals: { // For UMD builds, specify globals for external dependencies
+      react: 'React',
+      react-dom: 'ReactDOM'
+      
     },
   ],
   plugins: [
