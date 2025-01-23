@@ -15,7 +15,7 @@ export default {
     replace({
       preventAssignment: true,
       'process.env.NODE_ENV': JSON.stringify('production') }),
-    nodeResolve({ browser: true }),
+    nodeResolve({browser:true}),
     babel({
       babelHelpers: 'bundled',
       presets: ['@babel/preset-env','@babel/preset-react','@babel/preset-typescript'],
@@ -23,5 +23,5 @@ export default {
       exclude: 'node_modules',
       extensions: ['.ts','.tsx'] }),
     commonjs(),
-    typescript({ tsconfig: './tsconfig.json' })
+    typescript({tsconfig:'./tsconfig.json',outputToFilesystem:true,})
   ]};
