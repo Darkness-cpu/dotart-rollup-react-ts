@@ -36,7 +36,7 @@ const App: React.FC = () => {
       <h1>YouTube MP3 Downloader</h1>
       <p>Enter a YouTube URL to download the MP3</p>
       <input type="text" id="youtubeUrl" placeholder="Enter YouTube URL" />
-      <button onClick={handleSearch}>Search  x HeeHerCute</button>
+      <button onClick={handleSearch}>Search</button>
       <p id="result">{result}</p>
       {data.link && (
         <a href={data.link} target="_blank" rel="noopener noreferrer">
