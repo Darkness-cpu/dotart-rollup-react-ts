@@ -1,51 +1,49 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const App: React.FC = () => {
-  const [date, setDate] = useState('');
-  const [hours, setHours] = useState('00');
-  const [minutes, setMinutes] = useState('00');
-  const [seconds, setSeconds] = useState('00');
+  const [result, setResult] = useState<string>('');
+  const [data, setData] = useState<{ link: string | null }>({ link: null });
 
-  useEffect(() => {
-    const updateClock = () => {
-      const now = new Date();
+  const handleSearch = async () => {
+    const urlInput = (document.getElementById('youtubeUrl') as HTMLInputElement).value;
+    if (!urlInput) {
+      setResult('Please enter a URL.');
+      return;
+    }
 
-      const hours = now.getHours().toString().padStart(2, '0');
-      const minutes = now.getMinutes().toString().padStart(2, '0');
-      const seconds = now.getSeconds().toString().padStart(2, '0');
+    setResult('Processing...');
+    try {
+      const response = await fetch(`/dl?url=${encodeURIComponent(urlInput)}`);
+      const responseData = await response.json();
 
-      const year = now.getFullYear();
-      const month = now.toLocaleString('default', { month: 'long' });
-      const dayDate = now.getDate();
-      const day = now.toLocaleString('default', { weekday: 'long' });
-
-      setDate(`${day}, ${month} ${dayDate}, ${year}`);
-      setHours(hours);
-      setMinutes(minutes);
-      setSeconds(seconds);
-    };
-
-    updateClock(); // Initial update
-
-    const intervalId = setInterval(updateClock, 1000);
-
-    return () => clearInterval(intervalId); // Cleanup interval on unmount
-  }, []);
+      if (responseData.link) {
+        setData({ link: responseData.link });
+      } else {
+        setResult('Failed to get the MP3 link.');
+      }
+    } catch (error) {
+      // ตรวจสอบและแปลงชนิดของ error
+      if (error instanceof Error) {
+        setResult(`Error: ${error.message}`);
+      } else {
+        setResult('An unknown error occurred.');
+      }
+    }
+  };
 
   return (
-    <div className="container">
-      <div className="date">{date}</div>
-      <div className="clock">
-        <div className="time-row">
-          <div className="time-box hours">{hours}</div>
-          <div className="separator">:</div>
-          <div className="time-box minutes">{minutes}</div>
-          <div className="separator">:</div>
-          <div className="time-box seconds">{seconds}</div>
-        </div>
-      </div>
+    <div>
+      <h1>YouTube MP3 Downloader</h1>
+      <p>Enter a YouTube URL to download the MP3</p>
+      <input type="text" id="youtubeUrl" placeholder="Enter YouTube URL" />
+      <button onClick={handleSearch}>Search</button>
+      <p id="result">{result}</p>
+      {data.link && (
+        <a href={data.link} target="_blank" rel="noopener noreferrer">
+          Download
+        </a>
+      )}
     </div>
   );
 };
-
 export default App;
