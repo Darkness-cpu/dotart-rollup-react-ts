@@ -33,6 +33,8 @@
     "@types/react-dom": "^18",
     "babel-plugin-react-compiler": "experimental",
     "react-compiler-runtime": "experimental",
+    "tailwindcss": "latest",
+    "@tailwindcss/cli": "latest"
     "rollup": "latest",
     "serve": "latest",
     "tslib": "latest",
