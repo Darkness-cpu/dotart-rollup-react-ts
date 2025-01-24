@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
+import fileSizePlugin from 'rollup-filesize-plugin';
 export default {
   input: "src/main.tsx",
   output: [{file:"dist/bundler.js",format: "umd"}],
@@ -11,5 +12,6 @@ export default {
     nodeResolve({browser:true}),
     babel({babelHelpers:'bundled',presets:['@babel/preset-env','@babel/preset-react','@babel/preset-typescript'],plugins:[ ['babel-plugin-react-compiler',{target:'18'}]],exclude: 'node_modules/**',extensions:['.ts','.jsx']}),
     commonjs(),
-    typescript({tsconfig:'./tsconfig.json',outputToFilesystem:true,})
+    typescript({tsconfig:'./tsconfig.json',outputToFilesystem:true,}),
+    fileSizePlugin()
   ]};
