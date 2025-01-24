@@ -5,7 +5,7 @@ interface DotProps {
     onClick: () => void;
 }
 
-const App: React.FC<DotProps> = ({ active, onClick }) => {
+const Dot: React.FC<DotProps> = ({ active, onClick }) => {
     return (
         <div
             className={`dot ${active ? 'active' : ''}`}
@@ -14,7 +14,7 @@ const App: React.FC<DotProps> = ({ active, onClick }) => {
     );
 };
 
-const WebDotArt: React.FC = () => {
+const App: React.FC = () => {
     const gridSize = 20;
     const initialGrid = Array(gridSize).fill(Array(gridSize).fill(false));
     const [grid, setGrid] = useState<boolean[][]>(initialGrid);
