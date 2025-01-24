@@ -8,3 +8,8 @@ root.render(
       <App />
   </React.StrictMode>
 );
+
+} else {
+    // Handle the case where the root element is not found
+    console.error("Root element not found!");
+}
