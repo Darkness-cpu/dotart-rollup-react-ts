@@ -5,6 +5,9 @@ import App from "./app";
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <App />
+    <div>
+      <App size={150} />
+      <App size={300} /> {/* Different size */}
+    </div>
   </React.StrictMode>
 );
