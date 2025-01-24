@@ -5,7 +5,7 @@
   "description": "A basic React app bundled with Rollup",
   "scripts": {
     "dev": "rollup -c -w",
-    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./src/style.css && rollup -c",
+    "build": "bunx @tailwindcss/cli -i ./src/input.css -o ./src/style.css && rollup -c",
     "start": "rollup -c -w & serve ./dist"
   },
   "keywords": [
