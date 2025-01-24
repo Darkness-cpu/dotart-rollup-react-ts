@@ -1,12 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
+import './style.css';
 
-
-const App: React.FC = () => {
+const DotArtConverter: React.FC = () => {
   const [originalImage, setOriginalImage] = useState<HTMLImageElement | null>(null);
   const originalCanvasRef = useRef<HTMLCanvasElement>(null);
   const dotCanvasRef = useRef<HTMLCanvasElement>(null);
   const imageUploadRef = useRef<HTMLInputElement>(null);
-  const [pixelSize, setPixelSize] = useState<number>(4);
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -26,20 +25,6 @@ const App: React.FC = () => {
   const convertImageToDotArt = () => {
     if (!originalImage || !originalCanvasRef.current || !dotCanvasRef.current) return;
 
-    const userPixelSize = prompt("Enter pixel size (1-20):");
-    if (userPixelSize !== null) {
-      const newPixelSize = parseInt(userPixelSize, 10);
-      if (newPixelSize >= 1 && newPixelSize <= 20) {
-        setPixelSize(newPixelSize);
-      } else {
-        alert("Invalid pixel size. Please enter a number between 1 and 20.");
-        return; // Stop execution if pixel size is invalid
-      }
-    } else {
-        return; // Stop if the user cancels the prompt
-    }
-
-
     const originalCanvas = originalCanvasRef.current;
     const dotCanvas = dotCanvasRef.current;
     const originalContext = originalCanvas.getContext('2d');
@@ -54,8 +39,7 @@ const App: React.FC = () => {
 
     originalContext.drawImage(originalImage, 0, 0);
 
-
-
+    const pixelSize = 4; // Adjust for dot size
     for (let y = 0; y < originalImage.height; y += pixelSize) {
       for (let x = 0; x < originalImage.width; x += pixelSize) {
         const pixelData = originalContext.getImageData(x, y, pixelSize, pixelSize).data;
@@ -82,7 +66,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     if (originalImage) {
-      convertImageToDotArt(); // Call initially with default pixel size
+      convertImageToDotArt();
     }
   }, [originalImage]);
 
@@ -103,14 +87,9 @@ const App: React.FC = () => {
 
       <canvas ref={originalCanvasRef} />
       <canvas ref={dotCanvasRef} />
-      <button onClick={convertImageToDotArt} style={{ marginTop: '10px' }}>
-        Convert
-      </button>
-      <button onClick={downloadDotArt} style={{ marginTop: '10px' }}>
-        Download Dot Art
-      </button>
+      <button onClick={downloadDotArt}>Download Dot Art</button>
     </div>
   );
 };
 
-export default App;
+export default DotArtConverter;
