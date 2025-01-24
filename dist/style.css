@@ -1,85 +1,53 @@
-/* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
+/* Basic styling for the entire app container */
+.App {
+  display: flex;
+  justify-content: center; /* Center the dot art horizontally */
+  align-items: center; /* Center the dot art vertically */
+  min-height: 100vh; /* Make sure it takes up the full viewport height */
+  background-color: #f0f0f0; /* Light background color */
 }
 
-h1 {
-  margin-top: 20px;
-  font-size: 28px;
-  color: #007BFF;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+
+/* Styling for the container holding the grid of dots */
+.dot-art-container {
+    border: 2px solid #333; /* A slightly thicker border */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* Subtle box shadow */
+    padding: 10px;  /* Add some padding around the grid */
+    border-radius: 5px; /* Slightly rounded corners */
+
 }
 
-p {
-  font-size: 16px;
-  margin: 10px 0;
-}
 
-/* Input and Button Styles */
-input,
-button {
-  padding: 12px;
-  font-size: 16px;
-  margin: 10px auto;
-  width: 90%;
-  max-width: 400px;
-  box-sizing: border-box;
-}
-
-input {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 5px;
+/* Styling for the individual dots */
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 2px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease; /* Smooth transition for color change */
 }
 
-button:hover {
-  background-color: #0056b3;
+.dot.active {
+  background-color: #333; /* Darker color for active dots */
 }
 
-/* Result and Link Styles */
-#result {
-  margin-top: 20px;
+.dot:hover {
+    background-color: #666; /* Make the dot slightly darker on hover */
+
+}
+
+/* Styling for the Clear button */
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
   font-size: 16px;
-  color: #333;
-}
-
-#result a {
-  color: #007BFF;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-#result a:hover {
-  text-decoration: underline;
-}
-
-/* Footer Styles */
-footer {
-  margin-top: 30px;
-  font-size: 14px;
-  color: gray;
-}
-
-footer a {
-  color: #007BFF;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
+  margin: 10px 0; /* Add some margin above the grid */
+  cursor: pointer;
+  border-radius: 5px;
 }
