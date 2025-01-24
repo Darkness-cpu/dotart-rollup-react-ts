@@ -1,0 +1,81 @@
+.dot-art-converter {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #333;
+  color: #eee;
+  padding: 20px;
+}
+
+.dot-art-converter h1 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.dot-art-converter canvas {
+  border: 2px solid #555;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px;
+}
+
+.file-upload-wrapper { /* Wrapper for the custom file input */
+  position: relative;
+  display: inline-block;
+  overflow: hidden; /* Hide the default input */
+}
+
+
+.file-upload-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.file-upload-button:hover {
+  background-color: #0069d9;
+}
+
+.file-upload-input { /* Style the actual file input */
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0; /* Make the input transparent */
+  cursor: pointer; /* Maintain clickability */
+  width: 100%; /* Cover the entire button area */
+  height: 100%;
+}
+
+.dot-art-converter button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot-art-converter button:hover {
+  background-color: #0069d9;
+}
+
+
+@media (max-width: 768px) {
+  .dot-art-converter {
+    padding: 10px;
+  }
+
+  .dot-art-converter canvas {
+    width: 100%;
+    height: auto;
+  }
+
+  .file-upload-wrapper {
+    width: 100%;
+  }
+}
