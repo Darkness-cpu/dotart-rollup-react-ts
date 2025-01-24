@@ -19,14 +19,17 @@
   border: 2px solid #555;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   margin-bottom: 10px;
+  max-width: 100%; /* Ensures canvas doesn't overflow on smaller screens even without media query */
+  height: auto;    /* Maintains aspect ratio */
 }
 
-.file-upload-wrapper { /* Wrapper for the custom file input */
+/* File Upload Styles */
+.file-upload-wrapper {
   position: relative;
   display: inline-block;
-  overflow: hidden; /* Hide the default input */
+  overflow: hidden;
+  margin-bottom: 10px; /* Add some margin below the upload button */
 }
-
 
 .file-upload-button {
   background-color: #007bff;
@@ -36,25 +39,52 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-size: 16px; /* Make the button text a bit larger */
 }
 
 .file-upload-button:hover {
   background-color: #0069d9;
 }
 
-.file-upload-input { /* Style the actual file input */
+.file-upload-input {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0; /* Make the input transparent */
-  cursor: pointer; /* Maintain clickability */
-  width: 100%; /* Cover the entire button area */
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
   height: 100%;
 }
 
-.dot-art-converter button {
+
+
+.dot-art-converter button { /* Download Button Styles */
   background-color: #007bff;
   color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px; /* Consistent button size */
+  margin-top: 10px; /* Space between canvases and button */
+}
+
+.dot-art-converter button:hover {
+  background-color: #0069d9;
+}
+
+
+
+@media (max-width: 768px) {
+  .dot-art-converter {
+    padding: 10px;
+  }
+
+  .file-upload-wrapper {
+    width: 100%;
+  }
+}
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
