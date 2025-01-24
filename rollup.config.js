@@ -4,7 +4,7 @@ import babel from '@rollup/plugin-babel';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 export default {
-  input: "src/main.ts",
+  input: "src/main.tsx",
   output: [{file:"dist/bundler.js",format: "umd"}],
   plugins: [
     replace({preventAssignment:true,'process.env.NODE_ENV': JSON.stringify('production') }),
