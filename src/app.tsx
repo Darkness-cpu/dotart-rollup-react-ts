@@ -5,7 +5,7 @@ interface DotProps {
     onClick: () => void;
 }
 
-const Dot: React.FC<DotProps> = ({ active, onClick }) => {
+const App: React.FC<DotProps> = ({ active, onClick }) => {
     return (
         <div
             className={`dot ${active ? 'active' : ''}`}
@@ -55,4 +55,4 @@ const WebDotArt: React.FC = () => {
     );
 };
 
-export default WebDotArt;
+export default App;
