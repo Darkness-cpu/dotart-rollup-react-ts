@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './style.css';
 
 const DotArtConverter: React.FC = () => {
   const [originalImage, setOriginalImage] = useState<HTMLImageElement | null>(null);
