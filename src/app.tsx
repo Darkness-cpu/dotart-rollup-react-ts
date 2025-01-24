@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 
+
 const App: React.FC = () => {
   const [originalImage, setOriginalImage] = useState<HTMLImageElement | null>(null);
+  const [pixelSize, setPixelSize] = useState<number>(4);
   const originalCanvasRef = useRef<HTMLCanvasElement>(null);
   const dotCanvasRef = useRef<HTMLCanvasElement>(null);
   const imageUploadRef = useRef<HTMLInputElement>(null);
@@ -38,20 +40,25 @@ const App: React.FC = () => {
 
     originalContext.drawImage(originalImage, 0, 0);
 
-    const pixelSize = 4; // Adjust for dot size
-    for (let y = 0; y < originalImage.height; y += pixelSize) {
-      for (let x = 0; x < originalImage.width; x += pixelSize) {
-        const pixelData = originalContext.getImageData(x, y, pixelSize, pixelSize).data;
+    const pixelSizeValue = pixelSize;
+    for (let y = 0; y < originalImage.height; y += pixelSizeValue) {
+      for (let x = 0; x < originalImage.width; x += pixelSizeValue) {
+        const pixelData = originalContext.getImageData(x, y, pixelSizeValue, pixelSizeValue).data;
         const r = pixelData[0];
         const g = pixelData[1];
         const b = pixelData[2];
         const average = (r + g + b) / 3;
         dotContext.fillStyle = `rgb(${average}, ${average}, ${average})`;
         dotContext.beginPath();
-        dotContext.arc(x + pixelSize / 2, y + pixelSize / 2, pixelSize / 2, 0, 2 * Math.PI);
+        dotContext.arc(x + pixelSizeValue / 2, y + pixelSizeValue / 2, pixelSizeValue / 2, 0, 2 * Math.PI);
         dotContext.fill();
       }
     }
+  };
+
+  const handlePixelSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newPixelSize = parseInt(event.target.value, 10);
+    setPixelSize(newPixelSize);
   };
 
   const downloadDotArt = () => {
@@ -67,7 +74,7 @@ const App: React.FC = () => {
     if (originalImage) {
       convertImageToDotArt();
     }
-  }, [originalImage]);
+  }, [originalImage, pixelSize]);
 
   return (
     <div className="dot-art-converter">
@@ -82,6 +89,19 @@ const App: React.FC = () => {
           ref={imageUploadRef}
           className="file-upload-input"
         />
+      </div>
+
+      <div>
+        <label htmlFor="pixelSize">Pixel Size:</label>
+        <input
+          type="range"
+          id="pixelSize"
+          min="1"
+          max="20"
+          value={pixelSize}
+          onChange={handlePixelSizeChange}
+        />
+        <span>{pixelSize}</span>
       </div>
 
       <canvas ref={originalCanvasRef} />
