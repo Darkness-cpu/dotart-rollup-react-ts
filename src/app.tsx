@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import './style.css';
 
 const App: React.FC = () => {
   const [originalImage, setOriginalImage] = useState<HTMLImageElement | null>(null);
@@ -31,7 +32,6 @@ const App: React.FC = () => {
 
     if (!originalContext || !dotContext) return;
 
-
     originalCanvas.width = originalImage.width;
     originalCanvas.height = originalImage.height;
     dotCanvas.width = originalImage.width;
@@ -39,7 +39,7 @@ const App: React.FC = () => {
 
     originalContext.drawImage(originalImage, 0, 0);
 
-    const pixelSize = 4;
+    const pixelSize = 4; // Adjust for dot size
     for (let y = 0; y < originalImage.height; y += pixelSize) {
       for (let x = 0; x < originalImage.width; x += pixelSize) {
         const pixelData = originalContext.getImageData(x, y, pixelSize, pixelSize).data;
@@ -64,48 +64,30 @@ const App: React.FC = () => {
     link.click();
   };
 
-
   useEffect(() => {
     if (originalImage) {
       convertImageToDotArt();
     }
   }, [originalImage]);
 
-
   return (
-    <div style={{
-      fontFamily: 'sans-serif',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      backgroundColor: '#333',
-      color: '#eee',
-      padding: '20px'
-    }}>
+    <div className="dot-art-converter">
       <h1>Dot Art Converter</h1>
-      <input type="file" accept="image/*" onChange={handleImageUpload} ref={imageUploadRef} style={{
-        backgroundColor: '#007bff',
-        color: '#fff',
-        padding: '10px 20px',
-        border: 'none',
-        borderRadius: '5px',
-        cursor: 'pointer',
-        overflow: 'hidden',
-        position: 'relative',
-        display: 'inline-block'
-      }}/>
-       <span style={{
-         position: 'absolute',
-         top: 0, left: 0,
-         width: '100%', height: '100%',
-         display: 'flex',
-         alignItems: 'center',
-         justifyContent: 'center'
-       }}>Compiler</span>
 
-      <canvas ref={originalCanvasRef} style={{ border: '2px solid #555', boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)', marginBottom: '10px' }} />
-      <canvas ref={dotCanvasRef} style={{ border: '2px solid #555', boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)', marginBottom: '10px' }} />
-      <button onClick={downloadDotArt} style={{ backgroundColor: '#007bff', color: 'white', padding: '10px 20px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Download Dot Art</button>
+      <div className="file-upload-wrapper">
+        <button className="file-upload-button">Compiler</button>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleImageUpload}
+          ref={imageUploadRef}
+          className="file-upload-input"
+        />
+      </div>
+
+      <canvas ref={originalCanvasRef} />
+      <canvas ref={dotCanvasRef} />
+      <button onClick={downloadDotArt}>Download Dot Art</button>
     </div>
   );
 };
