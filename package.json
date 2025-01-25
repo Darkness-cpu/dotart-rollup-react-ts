@@ -34,7 +34,7 @@
     "@types/react-dom": "^18",
     "babel-plugin-react-compiler": "experimental",
     "react-compiler-runtime": "experimental",
-    "rollup-filesize-plugin": "github:Darkness-cpu/rollup-filesize-plugin",
+    "rollup-plugin-filesize": "latest",
     "tailwindcss": "latest",
     "@tailwindcss/cli": "latest",
     "rollup": "latest",
