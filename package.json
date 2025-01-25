@@ -34,8 +34,6 @@
     "babel-plugin-react-compiler": "experimental",
     "react-compiler-runtime": "experimental",
     "rollup-plugin-filesize": "latest",
-    "tailwindcss": "latest",
-    "@tailwindcss/cli": "latest",
     "rollup": "latest",
     "live-server": "latest",
     "tslib": "latest",
