@@ -5,7 +5,7 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 export default {
   input: "src/main.tsx",
-  output: [{file:"dist/bundler.js",format:"umd"}],
+  output: [{file:"dist/bundler.js",format:"iife"}],
   plugins: [
     replace({preventAssignment:true,'process.env.NODE_ENV': JSON.stringify('production') }),
     nodeResolve({browser:true}),
