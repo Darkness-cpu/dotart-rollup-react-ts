@@ -15,5 +15,6 @@ export default {
     babel({babelHelpers:'bundled',presets:['@babel/preset-env','@babel/preset-react','@babel/preset-typescript'],plugins:[ ['babel-plugin-react-compiler',{target:'18'}]],exclude: './node_modules',extensions:['.ts','.tsx']}),
     commonjs(),
     typescript({tsconfig:'./tsconfig.json',outputToFilesystem:true,})
-  ]
+  ],
+  external: [ 'web-vitals' ]
 };
