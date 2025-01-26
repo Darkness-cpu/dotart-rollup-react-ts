@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import VitalsDisplay from './VitalsDisplay';
 
 const App: React.FC = () => {
   const [originalImage, setOriginalImage] = useState<HTMLImageElement | null>(null);
@@ -88,7 +87,6 @@ const App: React.FC = () => {
       <canvas ref={originalCanvasRef} />
       <canvas ref={dotCanvasRef} />
       <button onClick={downloadDotArt}>Download Dot Art</button>
-      <VitalsDisplay />
     </div>
   );
 };
