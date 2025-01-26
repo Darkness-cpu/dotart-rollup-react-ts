@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-const DotArtConverter: React.FC = () => {
+const App: React.FC = () => {
   const [originalImage, setOriginalImage] = useState<HTMLImageElement | null>(null);
   const originalCanvasRef = useRef<HTMLCanvasElement>(null);
   const dotCanvasRef = useRef<HTMLCanvasElement>(null);
@@ -91,4 +91,4 @@ const DotArtConverter: React.FC = () => {
   );
 };
 
-export default DotArtConverter;
+export default App;
