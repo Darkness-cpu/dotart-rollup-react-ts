@@ -4,7 +4,6 @@ import babel from '@rollup/plugin-babel';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import pkg from './package.json' with { type: 'json' };
-import tsc from './tsconfig.json' with { type: 'json' };
 export default {
   input: "src/main.tsx",
   output: [{file:"dist/bundler.js",format:"iife"}],
@@ -14,6 +13,6 @@ export default {
     nodeResolve({browser:true}),
     babel({babelHelpers:'bundled',presets:['@babel/preset-env','@babel/preset-react','@babel/preset-typescript'],plugins:[ ['babel-plugin-react-compiler',{target:'18'}]],exclude: './node_modules',extensions:['.ts','.tsx']}),
     commonjs(),
-    typescript({tsconfig: tsc,outputToFilesystem:true,})
+    typescript({tsconfig:'./tsconfig.json',outputToFilesystem:true,})
   ]
 };
