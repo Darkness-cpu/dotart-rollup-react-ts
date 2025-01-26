@@ -6,8 +6,7 @@ import typescript from '@rollup/plugin-typescript';
 import pkg from './package.json' with { type: 'json' };
 export default {
   input: "src/main.tsx",
-  output: [{file:"dist/bundler.js",format:"iife",globals:{'react':'React','react-dom':'ReactDOM'},}],
-  external: Object.keys(pkg.dependencies),
+  output: [{file:"dist/bundler.js",format:"iife"}],
   plugins: [
     replace({preventAssignment:true,'process.env.NODE_ENV': JSON.stringify('production') }),
     nodeResolve({browser:true}),
