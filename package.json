@@ -4,6 +4,7 @@
   "type": "module",
   "description": "A basic React app bundled with Rollup",
   "scripts": {
+    "build": "roll -c && npx @tailwindcss/cli -i ./src/style.css -o ./dist/style.css",
     "dev": "rollup -c -w",
     "start": "rollup -c && live-server ./dist"
   },
@@ -18,7 +19,8 @@
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
-    "web-vitals": "latest"
+    "tailwindcss": "latest",
+    "@tailwindcss/cli": "latest"
   },
   "devDependencies": {
     "@babel/core": "latest",
