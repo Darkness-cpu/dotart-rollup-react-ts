@@ -41,6 +41,7 @@
     "strictFunctionTypes": true,
     "useUnknownInCatchVariables": true,
     "alwaysStrict": true,
+    "allowArbitraryExtensions": true,
     "noImplicitOverride": true,
     "skipLibCheck": false
   },
